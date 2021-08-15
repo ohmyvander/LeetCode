@@ -5,7 +5,7 @@
  *
  * 154 ms, 96.8 MB
  */
-public class Solution {
+class Solution {
     static class Node {
         public int r;
         public int c;
@@ -20,13 +20,13 @@ public class Solution {
     }
     private static final int[] DIRR = { -1, 1, 0, 0 };
     private static final int[] DIRC = { 0, 0, -1, 1 };
-
-    private Queue<org.example.global.Solution.Node> queue;
+    
+    private Queue<Node> queue;
 
     public boolean bfs(char[][] board, String word) {
         int row = board.length;
         int column = board[0].length;
-        org.example.global.Solution.Node node;
+        Node node;
         while ((node = queue.poll()) != null) {
             int r = node.r;
             int c = node.c;
@@ -40,7 +40,7 @@ public class Solution {
                 if (nr >= 0 && nr < row && nc >= 0 && nc < column && board[nr][nc] == word.charAt(nextDeep)) {
                     int pathHash = 1 << (nr * column + nc);
                     if ((pathHash & node.pathHash) == 0) {
-                        queue.offer(new org.example.global.Solution.Node(nr, nc, nextDeep, node.pathHash | pathHash));
+                        queue.offer(new Node(nr, nc, nextDeep, node.pathHash | pathHash));
                     }
                 }
             }
@@ -55,7 +55,7 @@ public class Solution {
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
                 if (board[i][j] == word.charAt(0)) {
-                    queue.offer(new org.example.global.Solution.Node(i, j, 0, 1 << (i * column + j)));
+                    queue.offer(new Node(i, j, 0, 1 << (i * column + j)));
                 }
             }
         }

@@ -3,7 +3,7 @@
  *
  * 30 ms, 44.4 MB
  */
-public class Solution {
+class Solution {
     private static final String ZERO = "0";
 
     private String digitalMultiply(String num, int digit, int pos) {
@@ -50,7 +50,7 @@ public class Solution {
             String number = digitalMultiply(num1, num2.charAt(i) - '0', num2.length() - 1 - i);
             result = add(result, number);
         }
-        double a = 1;
         return new StringBuffer(result).reverse().toString();
     }
 }
+

@@ -5,7 +5,7 @@
  *
  * 372 ms, 39.4 MB
  */
-public class Solution {
+class Solution {
     static class Node {
         public int r;
         public int c;

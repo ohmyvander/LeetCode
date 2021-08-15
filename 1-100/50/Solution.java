@@ -7,7 +7,7 @@
  *
  * 2 ms, 39.3 MB
  */
-public class Solution {
+class Solution {
     private double pow(double x, long n) {
         if (n == 0) {
             return 1;
