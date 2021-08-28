@@ -2,6 +2,7 @@
  * 多线程，顺序输出内容
  *
  * java多线程不太熟，稍微看了点写了下
+ * 还可以用AtomicBoolean，CountDownLatch等等
  *
  * 26 ms, 40.4 MB
  */
