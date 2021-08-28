@@ -1,6 +1,12 @@
 /**
+ * 求最长回文子字符串
+ * 
+ * 先用n的时间扫一遍原串，去除相邻重复的串，并用结构数组保存结果。单个结构内存放重复子串，子串长度，子串由哪个字母构成（这个可以不用）。然后对这个结构数组从前往后暴力。
+ * 
+ * 110 ms, 45.9 MB
+ * 
  * @param {string} s
- * @return {string}
+ * @return {string} result
  */
 var longestPalindrome = function(s) {
     var arr = [["", 0, ""]],
