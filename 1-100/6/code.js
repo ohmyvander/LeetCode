@@ -1,7 +1,11 @@
 /**
+ * 输出字符串
+ * 
+ * 196 ms
+ * 
  * @param {string} s
  * @param {number} numRows
- * @return {string}
+ * @return {string} result
  */
 var convert = function(s, numRows) {
     var len, i, m,
