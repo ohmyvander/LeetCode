@@ -1,4 +1,4 @@
-# [Rotate Image](https://leetcode.com/problems/rotate-image/submissions/)
+# [Rotate Image](https://leetcode.com/problems/rotate-image/)
 
 two-dimensional array index mapping.
 
