@@ -1,6 +1,34 @@
 # [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
 
-To be added....
+A problem using sliding window algorithm to solve. But I never knew this algorithm before.
+
+At first I transfered the input data to a `Node` array. `Node` contains three attributes: `c`, `length`, `gap`. `c` meant the character contained in the input string. `length` meant the length of each substring with character `c`. `gap` meant the length between each two substring with character `c`.
+
+For example, if input string is `"AABABBA"`, then the `Node` array is:
+
+```
+          AABABBA
+length: 0 2  1  1
+   gap: 0 1  2  0
+     c: A
+
+length: 0   1 2
+   gap: 2   1 1
+     c: B
+```
+
+Then combined each `length` and `gap` of `Node` to an array `eles`, with number one by one between each other:
+
+```
+eles A: [0, 0, 2, 1, 1, 2, 1, 0]
+eles B: [0, 2, 1, 1, 2, 1]
+```
+
+After that I used greedy algorithm to fill as many odd index number of `eles` as possible with `k`. And the code was poor and long....
+
+After reading [other solution](https://leetcode.com/problems/longest-repeating-character-replacement/discuss/358879/Java-Solution-Explained-and-Easy-to-Understand-for-Interviews), I used sliding window algorithm to solve this problem for the second time.
+
+## code
 
 ```java
 /**
