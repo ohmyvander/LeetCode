@@ -32,6 +32,7 @@ After reading [other solution](https://leetcode.com/problems/longest-repeating-c
 
 ```java
 /**
+ * greedy
  * 79 ms, 51.9 MB
  */
 class Solution {
@@ -140,6 +141,7 @@ class Solution {
 
 ```java
 /**
+ * sliding window
  * 7 ms, 43 MB
  */
 class Solution {
