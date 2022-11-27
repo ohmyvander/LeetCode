@@ -2,6 +2,8 @@
 
 Same as 424.
 
+## code
+
 ```python
 class Solution:
     '''
