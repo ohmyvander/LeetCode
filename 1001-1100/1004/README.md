@@ -2,6 +2,8 @@
 
 Similar to 424.
 
+## code
+
 ```typescript
 /**
  * 163 ms, 47.7 MB
