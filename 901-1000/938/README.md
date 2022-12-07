@@ -1,0 +1,38 @@
+# [Range Sum of BST](https://leetcode.com/problems/range-sum-of-bst/)
+
+Simple problem.
+
+## code
+
+```java
+/**
+ * 2 ms, 67.7 MB
+ */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        if (root == null) {
+            return 0;
+        }
+        int val = root.val;
+        if (val < low || val > high) {
+            val = 0;
+        }
+        return val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high);
+    }
+}
+```
