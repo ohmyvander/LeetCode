@@ -35,3 +35,23 @@ class Solution {
     }
 }
 ```
+
+```java
+/**
+ * 180 ms, 108.7 MB
+ */
+class Solution {
+    public int longestSquareStreak(int[] nums) {
+        Arrays.sort(nums);
+        int length = nums.length;
+        Map<Long, Integer> map = new HashMap<>();
+        int result = 0;
+        for (int i = length - 1; i >= 0; i--) {
+            long temp = nums[i];
+            map.put(temp, map.getOrDefault(temp * temp, 0) + 1);
+            result = Math.max(result, map.get(temp).intValue());
+        }
+        return result == 1 ? -1 : result;
+    }
+}
+```
