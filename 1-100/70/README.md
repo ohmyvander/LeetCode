@@ -23,3 +23,22 @@ class Solution {
     }
 }
 ```
+
+```python
+class Solution:
+    '''
+    36 ms, 13.9 MB
+    '''
+    def climbStairs(self, n: int) -> int:
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        for i in range(1, n + 1):
+            for k in range(1, 3):
+                if i - k < 0:
+                    continue
+                if dp[i] == 0:
+                    dp[i] = dp[i - k]
+                elif i - k >= 0:
+                    dp[i] += dp[i - k]
+        return dp[n]
+```
