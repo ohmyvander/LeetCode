@@ -35,3 +35,26 @@ class Solution {
     }
 }
 ```
+
+```java
+/**
+ * 4 ms, 41.7 MB
+ */
+class Solution {
+    public int similarPairs(String[] words) {
+        int length = words.length;
+        Map<Integer, Integer> map = new HashMap<>();
+        int result = 0;
+        for (String word : words) {
+            int num = 0;
+            for (char c : word.toCharArray()) {
+                int mask = 1 << (c - 'a');
+                num |= mask; 
+            }
+            map.put(num, map.getOrDefault(num, -1) + 1);
+            result += map.get(num);
+        }
+        return result;
+    }
+}
+```
