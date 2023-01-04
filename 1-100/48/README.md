@@ -2,6 +2,8 @@
 
 two-dimensional array index mapping.
 
+## code
+
 ```java
 /**
  * 1 ms, 43.3 MB
