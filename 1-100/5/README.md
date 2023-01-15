@@ -4,6 +4,8 @@ Solution one, start from middle of the string and expand to both side.
 
 Solution two, dynamic programming, `dp[i][j] = true` if s[i...j] is a palindromic string. So the state transition equation is `dp[i][i] = true`, `dp[i][j] = s[i] == s[j] && (j - i == 1 || dp[i + 1][j - 1])`.
 
+Solution three, manacher algorithm.
+
 ## code
 
 ```java
@@ -155,6 +157,47 @@ class Solution {
             }
         }
         return result;
+    }
+}
+```
+
+```java
+/**
+ * solution three
+ * 7 ms, 42 MB
+ */
+class Solution {
+    public String longestPalindrome(String s) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("$#");
+        for (char c : s.toCharArray()) {
+            sb.append(c);
+            sb.append('#');
+        }
+        String str = sb.toString();
+        int length = str.length();
+        int[] p = new int[length];
+        int center = 0;
+        int right = 0;
+        int maxR = 0;
+        int maxCenter = 0;
+        for (int i = 1; i < length; i++) {
+            int mirror = 2 * center - i;
+            p[i] = i >= right ? 1 : Math.min(right - i, p[mirror]);
+            while (i + p[i] < length && str.charAt(i - p[i]) == str.charAt(i + p[i])) {
+                p[i]++;
+            }
+            if (i + p[i] > right) {
+                right = i + p[i];
+                center = i;
+            }
+            if (maxR < p[i]) {
+                maxR = p[i];
+                maxCenter = i;
+            }
+        }
+        int start = (maxCenter - p[maxCenter]) / 2;
+        return s.substring(start, start + maxR - 1);
     }
 }
 ```
