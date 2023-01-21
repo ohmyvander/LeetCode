@@ -2,6 +2,8 @@
 
 sort every string, then group them.
 
+## code
+
 ```java
 /**
  * 13 ms, 55.4 MB
